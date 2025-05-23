@@ -2,139 +2,131 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard with Graphs</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="dashboard">
-        <div class="sidebar">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                Statsboard
-            </div>
+        <aside class="sidebar">
+            <div class="logo">DashGro</div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="fas fa-th-large"></i>
-                        <span>Overview</span>
-                    </a>
+                <li class="nav-item"><a href="#" class="nav-link active"><i class="fas fa-chart-line"></i> Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-users"></i>
-                        <span>Student</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-user-tie"></i>
-                        <span>Professor</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Analytics</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-calendar-days"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-wallet"></i>
-                        <span>Finance</span>
-                    </a>
-                </li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
-        </div>
+        </aside>
+
         <main class="main-content">
             <div class="top-bar">
-                <h1 class="page-title">University Statsboard</h1>
+                <div class="page-title">Overview</div>
                 <div class="top-actions">
                     <div class="search-box">
-                        <i class="fas fa-search" style="color:#94a3b8"></i>
-                        <input type="text" placeholder="Search students, courses...">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
                     </div>
-                    <button class="notification-btn">
+                    <div class="notification-btn">
                         <i class="fas fa-bell"></i>
-                        <span class="notification-badge">3</span>
-                    </button>
+                        <div class="notification-badge">3</div>
+                    </div>
                 </div>
             </div>
-            <!-- stats card-->
+
             <div class="stats-container">
                 <div class="stat-card">
-                    <div class="stat-icon" style="background:linear-gradient(45deg, #00ced1,#9d7bee );">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
+                    <div class="stat-icon" style="background:#7b68ee"><i class="fas fa-dollar-sign"></i></div>
                     <div class="stat-info">
-                        <div class="stat-value">12,345</div>
-                        <div class="stat-label">Total Students</div>
+                        <div class="stat-value">$12,340</div>
+                        <div class="stat-label">Revenue</div>
                     </div>
-                    <div class="stat-trend trend-positive">
-                        <i class="fas fa-arrow-up"></i>
-                        <span>20% from last year </span>
-                    </div>
+                    <div class="stat-trend trend-positive">+8.5% since last month</div>
                 </div>
-
 
                 <div class="stat-card">
-                    <div class="stat-icon" style="background:linear-gradient(45deg,#00ced1,#00e6e6);">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
+                    <div class="stat-icon" style="background:#00ced1"><i class="fas fa-users"></i></div>
                     <div class="stat-info">
-                        <div class="stat-value">900</div>
-                        <div class="stat-label">Faculty Member</div>
+                        <div class="stat-value">1,240</div>
+                        <div class="stat-label">Users</div>
                     </div>
-                    <div class="stat-trend trend-positive">
-                        <i class="fas fa-arrow-up"></i>
-                        <span>5% increase</span>
-                    </div>
+                    <div class="stat-trend trend-negative">-2.3% since last week</div>
                 </div>
-
 
                 <div class="stat-card">
-                    <div class="stat-icon" style="background:linear-gradient(45deg,#ff6b6b,#ff8585);">
-                        <i class="fas fa-book"></i>
-                    </div>
+                    <div class="stat-icon" style="background:#ff6b6b"><i class="fas fa-shopping-cart"></i></div>
                     <div class="stat-info">
-                        <div class="stat-value">620</div>
-                        <div class="stat-label">Active Courses</div>
+                        <div class="stat-value">430</div>
+                        <div class="stat-label">Orders</div>
                     </div>
-                    <div class="stat-trend trend-negative">
-                        <i class="fas fa-arrow-down"></i>
-                        <span>3% decreases</span>
-                    </div>
+                    <div class="stat-trend trend-positive">+4.1% since last week</div>
                 </div>
-
 
                 <div class="stat-card">
-                    <div class="stat-icon" style="background:linear-gradient(45deg, #10b981,#34d399);">
-                        <i class="fas fa-award"></i>
-                    </div>
+                    <div class="stat-icon" style="background:#10b981"><i class="fas fa-chart-pie"></i></div>
                     <div class="stat-info">
-                        <div class="stat-value">94.2%</div>
-                        <div class="stat-label">Pass Rate</div>
-                        <div class="stat-trend trend-positive">
-                            <i class="fas fa-arrow-up"></i>
-                            <span>2.5% improvement</span>
-                        </div>
+                        <div class="stat-value">68%</div>
+                        <div class="stat-label">Conversion</div>
                     </div>
+                    <div class="stat-trend trend-positive">+1.2% this quarter</div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <div class="chart-card">
+                    <div class="chart-title">Sales Over Time</div>
+                    <canvas id="salesChart"></canvas>
                 </div>
 
+                <div class="chart-card">
+                    <div class="chart-title">User Growth</div>
+                    <canvas id="userChart"></canvas>
+                </div>
             </div>
         </main>
     </div>
 
+    <script>
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(salesCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [1200, 1900, 3000, 2500, 3200],
+                    backgroundColor: 'rgba(123, 104, 238, 0.2)',
+                    borderColor: '#7b68ee',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        const userCtx = document.getElementById('userChart').getContext('2d');
+        const userChart = new Chart(userCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Users',
+                    data: [200, 400, 650, 580, 700],
+                    backgroundColor: '#00ced1'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
 </body>
 
 </html>
